@@ -1,0 +1,22 @@
+{
+  "model": "lstm",
+  "perplexity": 190.0498789410644,
+  "bleu": {
+    "bleu-1": 0.03536924116411538,
+    "bleu-2": 0.012740367902761543,
+    "bleu-3": 0.0037817251451024575,
+    "bleu-4": 0.0009777392069717874,
+    "bleu-avg": 0.01321726835473779
+  },
+  "rhyme": {
+    "ref_rhyme_density_mean": 0.0,
+    "hyp_rhyme_density_mean": 0.0,
+    "rhyme_preservation_mean": 0.0
+  },
+  "theme": {
+    "theme_sim_mean": 0.048346154861297085,
+    "theme_sim_std": 0.05093365050841878,
+    "theme_sim_min": 0.0,
+    "theme_sim_max": 0.24286012064348622
+  }
+}
