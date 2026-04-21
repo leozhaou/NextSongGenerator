@@ -3,6 +3,7 @@ import random
 import re
 
 
+
 def language_filter(file, language = "en"):
     """
     input:
@@ -53,14 +54,11 @@ def preprocess_lyrics(file):
     lyrics_idx = header.index("lyrics")
 
     for row in rows:
+        print("I am a big dummy")
         lyrics = row[lyrics_idx]
-        # lowercase
         lyrics = lyrics.lower()
-        # remove section headers like [Verse 1], [Chorus], etc.
         lyrics = re.sub(r"\[.*?\]", "", lyrics)
-        # remove non-alphanumeric characters except whitespace and apostrophes
         lyrics = re.sub(r"[^a-z0-9\s']", "", lyrics)
-        # collapse multiple spaces/newlines into a single space
         lyrics = re.sub(r"\s+", " ", lyrics).strip()
         row[lyrics_idx] = lyrics
 
@@ -70,9 +68,9 @@ def preprocess_lyrics(file):
         writer.writerows(rows)
 
 
-# language_filter("song_lyrics.csv")
+language_filter("song_lyrics.csv")
 random_sample("song_lyrics.csv")
-preprocess_lyrics("song_lyrics.csv")1
+preprocess_lyrics("song_lyrics.csv")
 
         
 

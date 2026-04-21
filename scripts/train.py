@@ -8,19 +8,34 @@ get_tokenizer_and_dataset() below.
 
 Usage
 -----
-    python scripts/train.py \\
-        --data       data/song_lyrics.csv \\
-        --model      lstm \\
-        --language   en \\
-        --epochs     20 \\
-        --batch_size 64 \\
-        --seq_len    64 \\
-        --embed_dim  256 \\
-        --hidden_dim 512 \\
-        --num_layers 2 \\
-        --dropout    0.3 \\
-        --lr         1e-3 \\
-        --save_dir   checkpoints/lstm/
+    LSTM:
+        python scripts/train.py \\
+            --data       data/song_lyrics.csv \\
+            --model      lstm \\
+            --language   en \\
+            --epochs     20 \\
+            --batch_size 64 \\
+            --seq_len    64 \\
+            --embed_dim  256 \\
+            --hidden_dim 512 \\
+            --num_layers 2 \\
+            --dropout    0.3 \\
+            --lr         1e-3 \\
+            --save_dir   checkpoints/lstm/
+
+    GPT-2:
+        python scripts/train.py \\
+            --data       data/song_lyrics.csv \\
+            --model      gpt2 \\
+            --language   en \\
+            --epochs     10 \\
+            --batch_size 32 \\
+            --seq_len    64 \\
+            --hidden_dim 768 \\
+            --num_layers 12 \\
+            --dropout    0.1 \\
+            --lr         5e-5 \\
+            --save_dir   checkpoints/gpt2/
 """
 
 import argparse
@@ -29,8 +44,12 @@ import math
 import os
 import pickle
 import random
+import sys
 import time
 from pathlib import Path
+
+# Ensure project root is on the path when running as `python scripts/train.py`
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import numpy as np
 import pandas as pd
@@ -48,6 +67,9 @@ def get_tokenizer_and_dataset(model_name: str):
     if model_name == "lstm":
         from models.lstm import LyricTokenizer, LyricDataset
         return LyricTokenizer, LyricDataset
+    elif model_name == "gpt2":
+        from models.gpt2 import LyricTokenizer, LyricDataset
+        return LyricTokenizer, LyricDataset
     else:
         raise ValueError(f"Unknown model '{model_name}'. Add it to get_tokenizer_and_dataset().")
 
@@ -57,6 +79,9 @@ def get_model(model_name: str, **kwargs) -> nn.Module:
     if model_name == "lstm":
         from models.lstm import LSTMLyricModel
         return LSTMLyricModel(**kwargs)
+    elif model_name == "gpt2":
+        from models.gpt2 import GPT2LyricModel
+        return GPT2LyricModel(**kwargs)
     else:
         raise ValueError(f"Unknown model '{model_name}'. Add it to get_model().")
 
@@ -115,12 +140,22 @@ def save_checkpoint(state: dict, path: str) -> None:
 # Training / evaluation loops
 # ---------------------------------------------------------------------------
 
-def train_epoch(model, loader, optimizer, criterion, device, grad_clip: float = 1.0) -> float:
+def train_epoch(
+    model,
+    loader,
+    optimizer,
+    criterion,
+    device,
+    grad_clip: float = 1.0,
+    max_steps_per_epoch: int | None = None,
+) -> float:
     model.train()
     total_loss   = 0.0
     total_tokens = 0
 
     for step, (x, y) in enumerate(loader):
+        if max_steps_per_epoch is not None and step >= max_steps_per_epoch:
+            break
         x, y = x.to(device), y.to(device)
 
         optimizer.zero_grad()
@@ -150,13 +185,16 @@ def eval_epoch(model, loader, criterion, device) -> float:
     total_loss   = 0.0
     total_tokens = 0
 
-    for x, y in loader:
+    for step, (x, y) in enumerate(loader):
         x, y = x.to(device), y.to(device)
         logits, _ = model(x)
         loss = criterion(logits.reshape(-1, logits.size(-1)), y.reshape(-1))
         tokens        = y.numel()
         total_loss   += loss.item() * tokens
         total_tokens += tokens
+
+        if (step + 1) % 100 == 0:
+            print(f"  [val] step {step+1:>5} | loss {total_loss/total_tokens:.4f}")
 
     return total_loss / max(total_tokens, 1)
 
@@ -196,15 +234,30 @@ def main(args: argparse.Namespace) -> None:
     print(f"[split] train={len(train_ds):,}  val={len(val_ds):,}")
 
     # ── model ─────────────────────────────────────────────────────────────
-    model_kwargs = dict(
-        vocab_size  = tokenizer.vocab_size,
-        embed_dim   = args.embed_dim,
-        hidden_dim  = args.hidden_dim,
-        num_layers  = args.num_layers,
-        dropout     = args.dropout,
-        pad_idx     = tokenizer.pad_idx,
-        tie_weights = args.tie_weights,
-    )
+    if args.model == "lstm":
+        model_kwargs = dict(
+            vocab_size  = tokenizer.vocab_size,
+            embed_dim   = args.embed_dim,
+            hidden_dim  = args.hidden_dim,
+            num_layers  = args.num_layers,
+            dropout     = args.dropout,
+            pad_idx     = tokenizer.pad_idx,
+            tie_weights = args.tie_weights,
+        )
+    elif args.model == "gpt2":
+        model_kwargs = dict(
+            vocab_size       = tokenizer.vocab_size,
+            hidden_size      = args.hidden_dim,
+            num_hidden_layers= args.num_layers,
+            num_attention_heads= 8 if args.hidden_dim < 1024 else 12,
+            intermediate_size= args.hidden_dim * 4,
+            dropout          = args.dropout,
+            pad_idx          = tokenizer.pad_idx,
+            use_cache        = True,
+        )
+    else:
+        raise ValueError(f"Unknown model: {args.model}")
+    
     model = get_model(args.model, **model_kwargs).to(device)
     print(f"[model] {model}")
 
@@ -229,7 +282,15 @@ def main(args: argparse.Namespace) -> None:
 
     for epoch in range(1, args.epochs + 1):
         t0         = time.time()
-        train_loss = train_epoch(model, train_loader, optimizer, criterion, device, args.grad_clip)
+        train_loss = train_epoch(
+            model,
+            train_loader,
+            optimizer,
+            criterion,
+            device,
+            args.grad_clip,
+            args.max_steps_per_epoch,
+        )
         val_loss   = eval_epoch(model, val_loader, criterion, device)
         scheduler.step(val_loss)
 
@@ -315,6 +376,8 @@ if __name__ == "__main__":
     parser.add_argument("--lr",           type=float, default=1e-3)
     parser.add_argument("--weight_decay", type=float, default=1e-5)
     parser.add_argument("--grad_clip",    type=float, default=1.0)
+    parser.add_argument("--max_steps_per_epoch", type=int, default=0,
+                        help="Max training batches per epoch. 0 = full epoch.")
     parser.add_argument("--num_workers",  type=int,   default=4)
     parser.add_argument("--seed",         type=int,   default=42)
 
@@ -328,5 +391,9 @@ if __name__ == "__main__":
     if args.stride == 0:
         args.stride = args.seq_len // 2
         print(f"[stride] auto → {args.stride}")
+    if args.max_steps_per_epoch <= 0:
+        args.max_steps_per_epoch = None
+    else:
+        print(f"[steps] limiting training to {args.max_steps_per_epoch:,} batches/epoch")
 
     main(args)

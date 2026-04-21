@@ -15,16 +15,29 @@ To add a new model, add an elif branch in load_model_from_checkpoint() below.
 
 Usage
 -----
-    python scripts/evaluate.py \\
-        --checkpoint checkpoints/lstm/best_model.pt \\
-        --tokenizer  checkpoints/lstm/tokenizer.pkl \\
-        --data       data/song_lyrics.csv \\
-        --language   en \\
-        --num_samples 200 \\
-        --prompt_len  20 \\
-        --gen_len     80 \\
-        --human_eval_n 10 \\
-        --output_dir  results/lstm/
+    LSTM:
+        python scripts/evaluate.py \\
+            --checkpoint checkpoints/lstm/best_model.pt \\
+            --tokenizer  checkpoints/lstm/tokenizer.pkl \\
+            --data       data/song_lyrics.csv \\
+            --language   en \\
+            --num_samples 200 \\
+            --prompt_len  20 \\
+            --gen_len     80 \\
+            --human_eval_n 10 \\
+            --output_dir  results/lstm/
+
+    GPT-2:
+        python scripts/evaluate.py \\
+            --checkpoint checkpoints/gpt2/best_model.pt \\
+            --tokenizer  checkpoints/gpt2/tokenizer.pkl \\
+            --data       data/song_lyrics.csv \\
+            --language   en \\
+            --num_samples 200 \\
+            --prompt_len  20 \\
+            --gen_len     80 \\
+            --human_eval_n 10 \\
+            --output_dir  results/gpt2/
 """
 
 import argparse
@@ -33,7 +46,11 @@ import math
 import os
 import pickle
 import string
+import sys
 from pathlib import Path
+
+# Ensure project root is on the path when running as `python scripts/evaluate.py`
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import numpy as np
 import pandas as pd
@@ -77,13 +94,16 @@ def load_model_from_checkpoint(ckpt_path: str, tokenizer, device: torch.device):
     if model_name == "lstm":
         from models.lstm import LSTMLyricModel
         model = LSTMLyricModel(**model_kwargs)
+    elif model_name == "gpt2":
+        from models.gpt2 import GPT2LyricModel
+        model = GPT2LyricModel(**model_kwargs)
     # example for other models
     # elif model_name == "transformer":
     #     from models.transformer import TransformerLyricModel
     #     model = TransformerLyricModel(**model_kwargs)
-    # elif model_name == "gpt2":
-    #     from models.gpt2 import GPT2LyricModel
-    #     model = GPT2LyricModel(**model_kwargs)
+    # elif model_name == "bert":
+    #     from models.bert import BERTLyricModel
+    #     model = BERTLyricModel(**model_kwargs)
     else:
         raise ValueError(f"Unknown model '{model_name}'. Add it to load_model_from_checkpoint().")
 
