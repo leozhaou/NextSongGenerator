@@ -21,11 +21,7 @@ from models.gpt2 import GPT2LyricModel
 CHECKPOINT = "checkpoints/gpt2_small/best_model.pt"
 
 PROMPTS = [
-    "I feel the fire burning inside",
-    "dancing in the rain with you",
-    "lost in the night, searching for a sign",
-    "love is all we need to survive",
-    "the road goes on forever",
+    "shout out my label thats me"
 ]
 
 def main():
