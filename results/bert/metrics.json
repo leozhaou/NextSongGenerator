@@ -1,0 +1,22 @@
+{
+    "model": "bert",
+    "perplexity": 342.19,
+    "bleu": {
+      "bleu-1": 0.032014583921047,
+      "bleu-2": 0.011423895612384,
+      "bleu-3": 0.003182947261038,
+      "bleu-4": 0.000762384910273,
+      "bleu-avg": 0.012895952926186
+    },
+    "rhyme": {
+      "ref_rhyme_density_mean": 0.0,
+      "hyp_rhyme_density_mean": 0.0,
+      "rhyme_preservation_mean": 0.0
+    },
+    "theme": {
+      "theme_sim_mean": 0.044812673948201,
+      "theme_sim_std": 0.048271936452817,
+      "theme_sim_min": 0.0,
+      "theme_sim_max": 0.197384621093456
+    }
+  }

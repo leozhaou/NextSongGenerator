@@ -1,0 +1,102 @@
+[
+    {
+      "prompt": "ooo wooh woah woah yeah yeah i'll do anything to keep you close to me i'll do anything",
+      "reference": "to keep you close to me and i hate to see you go i don't feel whole when you leave and i'm my soul cause you're all that i need i just need you right by my side yeahyeah",
+      "hypothesis": "to keep you here beside me i don't want to let you go i just need you to stay with me cause you are all that i need i just want you right here by my side yeah yeah i'll do anything to keep you close to me"
+    },
+    {
+      "prompt": "i've been gone for so long feels good just to get back home all my friends all the faces",
+      "reference": "i like to see like a rainbow in the sky a certain twinkle is in her eye telling me she believes in what i am",
+      "hypothesis": "i love to see again it feels so good to be back home all my friends are here waiting for me i've been away too long and now i'm back where i belong it feels so right to be here again"
+    },
+    {
+      "prompt": "imagine there's no heaven it's easy if you try no hell below us above us only sky imagine all",
+      "reference": "the people living for today imagine there's no countries it isn't hard to do nothing to kill or die for and no religion too",
+      "hypothesis": "the people living life in peace imagine there's no war it isn't hard to see nothing to fight or die for and no hatred too imagine all the people sharing all the world you may say i'm a dreamer"
+    },
+    {
+      "prompt": "your eyes have turned red once beautiful now ashamed the girl i once adored now different now gone bring",
+      "reference": "back the heart i once thought so highly of bring back the one who wasn't so high and mighty",
+      "hypothesis": "back the love we used to have bring back the girl i fell in love with i will not stand and watch you hurt yourself i cannot bear to see the pain behind your eyes take back what you said take back what you've done"
+    },
+    {
+      "prompt": "look at killer joe dancing with marie she looks like an angel she should dance with me look at",
+      "reference": "how they he's the best in town boy am i in trouble she don't know that i'm around oh i'm so jealous",
+      "hypothesis": "how they move together he holds her close and i am standing here alone she doesn't even know i exist oh i'm so jealous of killer joe dancing with my marie she should be dancing here with me"
+    },
+    {
+      "prompt": "why do i keep failing at everything i do it only takes one song for me to skip my",
+      "reference": "way to june one thousand times i'm so caught up on time i force myself it kills my health but i still do it",
+      "hypothesis": "way through the pain one more time i'm so lost in my own mind i push myself it breaks me down but i keep going why won't you let me leave this place or i will find my own way out"
+    },
+    {
+      "prompt": "i keep going to the river to pray 'cause i need something that can wash all the pain and",
+      "reference": "at most i'm sleeping all these demons away but your ghost the ghost of you it keeps me awake",
+      "hypothesis": "all the hurt i carry with me every day i'm running from the shadows but your memory your memory of you it never fades away my friends had you figured out they saw what was inside of you"
+    },
+    {
+      "prompt": "many human beings i meet in the city seem so busy and they look down on the street",
+      "reference": "their faces do not tell me what they think or even what they feel i walk through the streets and wonder why they seem so distant",
+      "hypothesis": "their eyes are tired and cold they never stop to look around i walk beside them every day and wonder what they carry they move so fast through all the noise and never hear a sound"
+    },
+    {
+      "prompt": "oh life is bigger it's bigger than you and you are not me the lengths that i will go",
+      "reference": "to the distance in your eyes oh no i've said too much i set it up that's me in the corner losing my religion",
+      "hypothesis": "to find the meaning in your eyes oh no i've said too much i've given everything that's me in the spotlight losing all my faith trying to hold on to you like a hurt lost and broken soul"
+    },
+    {
+      "prompt": "when you walk through a storm hold your head up high and dont be afraid of the dark at",
+      "reference": "the end of the storm is a golden sky and the sweet silver song of a lark walk on through the wind",
+      "hypothesis": "the end of the road there is a golden light and the sound of a new day walk on through the rain though your heart may break walk on walk on with hope inside and you'll never be alone"
+    },
+    {
+      "prompt": "you and i just yelling off the balcony late july just waiting for your friends to leave and finally",
+      "reference": "so can we so can we in the back of the car trying to stay awake i can tell from the stars that we're at la",
+      "hypothesis": "just you and me just you and me lying on the rooftop watching all the city lights i've been looking for someone like you all along and now i know that you were always right here by my side"
+    },
+    {
+      "prompt": "i know you want me you know i want cha i know you want me you know i want",
+      "reference": "cha one two three four uno dos ricky fort i know you want me want me you know i want cha want cha",
+      "hypothesis": "me too i know you feel it every time we're in the same room i know you need me and i need you too one two three let's go i know you want me want me you know i want you want you"
+    },
+    {
+      "prompt": "how much more will you need i'll try to give you everything you can take anything just leave a",
+      "reference": "little little part of me and for a time we may be happy and for a time it may feel good",
+      "hypothesis": "little piece of who i am and for a while we could be happy and for a while this might feel real but all this time i knew that we could never be what we promised we would"
+    },
+    {
+      "prompt": "i went down to the river to watch the fish swim by but i got to the river so",
+      "reference": "lonesome i wanted to die oh lord and then i jumped in the river but the doggone river was dry",
+      "hypothesis": "lonely that i sat down and cried oh lord why do i feel so empty inside i came here for peace but the river just flows on and leaves me with nothing but this lonesome feeling inside"
+    },
+    {
+      "prompt": "there is a lot that we all have to go through making songs for my pain that's my go",
+      "reference": "to it's crazy how they judge when they do not even know you when they do not even know you",
+      "hypothesis": "to place when the world gets heavy i just write it out it's funny how they talk about you when they don't even know you they don't know your story but they judge you all the same"
+    },
+    {
+      "prompt": "it's one for the money and one for the show i got one kiss for you honey so come",
+      "reference": "on let's go i didn't see it coming but girl now i know it takes one for the running but two for the road",
+      "hypothesis": "on baby let's go i never saw it coming but now here we are it takes two to make it work and one to break a heart one way tickets and a diamond ring it don't matter what tomorrow brings"
+    },
+    {
+      "prompt": "the life you could've had you wasted yeah you wasted the chance turned down a thousand times you've wasted",
+      "reference": "yeah you wasted everything you never wanted to see i am i am what it means to be free",
+      "hypothesis": "yeah you threw it all away everything you never had the courage to believe i am i am more than you ever wanted me to be i am i am standing here and finally i am free"
+    },
+    {
+      "prompt": "well she tossed all night like a raging sea woke up and climbed from the suicide machine with her",
+      "reference": "spanish candles and her persian poems struck on the rocks and sighed tears in waves minds on fire nights alone",
+      "hypothesis": "worn out hands and her broken dreams walking through the cold and empty morning light tears in waves and a mind on fire all alone lost inside a world she never asked to find"
+    },
+    {
+      "prompt": "i'm gonna live my life like every day's the last without a simple goodbye it all goes by so",
+      "reference": "fast and now that you're gone i can't cry hard enough no i can't cry hard enough for you to hear me now",
+      "hypothesis": "fast and now that you are gone i cannot breathe deep enough no i cannot hold on long enough for you to feel me now i'm gonna open up my eyes and see the light again"
+    },
+    {
+      "prompt": "sometimes i want to feel the way i used to feel free from everything inside me but this time",
+      "reference": "only the hurt inside is what is real reminds me i'm falling away reminds me confines me something inside me",
+      "hypothesis": "only the silence in my chest feels real it reminds me that i'm breaking down it confines me and defines me something inside is slowly tearing to the bone leaving me all alone"
+    }
+  ]
