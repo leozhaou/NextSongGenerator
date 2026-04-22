@@ -1,0 +1,246 @@
+SONG LYRIC COMPLETION – HUMAN EVALUATION  [gpt2]
+============================================================
+
+Rate each criterion 1 (poor) → 5 (excellent).
+Overall preference: A / B / tie
+
+────────────────────────────────────────────────────────────
+Sample #1
+
+PROMPT:
+everybody outside everybody outside when i pull up outside all night no everybody high five everybody wanna smile everybody
+
+SYSTEM A:
+wanna lie that's nice no oh now you wanna chill oh now you wanna build oh now you got the bill that's cool though oh now you got the gas oh now you wanna laugh oh now you need a cab that's true though all you do is talk i ain't got shit to say can't no one get in my car i don't even valet long discussions oh you my cousin no you wasn't you just wanna ride you just wanna talk about politics chicago shit and rocket ships shut up start dancing ho all night i been drinking all night i been drinking all night i been drinking ay ay all night i been drinking all night i been drinking all night i been drinking hey all night i been drinking all night i been drinking all night i been drinking ay ay you just went and spilt fries in the seat it's fried on the seat come ride on the seat ay last girl she'll lie on the seat she'll fart on the seat now she jog in the streets say i don't trust no one faking like a fan asking for a pic you should use your phone call a uber you a goofy if you think i don't know you need a lyft is you is or is you ain't got gas money no or debit cards i need cash money so back up back up i need space now i need you to slow down it's not a race now i can't really hear what you gotta say now shut up all night i been drinking all night i been drinking all night i been drinking ay ay all night i been drinking all night i been drinking all night i been drinking hey all night i been drinking all night i been drinking all night i been drinking ay ay start dancing ho
+
+SYSTEM B:
+got me she gotta hit it yeah i been on the way the way and i don't wanna let me and when i know he love you got me from the way now they got me i do this way the way she got a way to get it up a nigga i'm the time and i ain't made me out of me nigga in the right on you got me like the same way and i know that boy
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+
+────────────────────────────────────────────────────────────
+Sample #2
+
+PROMPT:
+i woke up in the dead of night i hit the road before daylight i got stuck down south
+
+SYSTEM A:
+and i got to find the end yeah i got to let my friends she had to the lights and i need you the time to the time i've been the night i want to get it i need it all the way i think that bitch i got to stay away but i'm looking down in the way i get all my mind and see the and i ain't like that nigga in my head and i don't
+
+SYSTEM B:
+near mexico i don't know where i'm going and i don't got no place to go i read the writing on the wall only when you stand can you ever fall running out of gas trying to find my way it's hard to see tomorrow when you can't see past today i am just a bandit on the run i don't always have answers always having fun i don't count on tomorrow tomorrow might never come i am just a bandit on the run yeah one more shot before we go it gets so cold out there on the open road and in the fog i read a sign the next left is the question but your answers come with time i am just a bandit on the run yeah i don't always have answers always having fun i don't count on tomorrow tomorrow might never come i am just a bandit on the run i am just a bandit on i am just a bandit on i am just a bandit on the run
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+
+────────────────────────────────────────────────────────────
+Sample #3
+
+PROMPT:
+all the walls are painted white faded light faded light you wandered through the shades of night now take
+
+SYSTEM A:
+flight take flight and there's the wind that fills your sail i won't tell i won't tell so draw the blinds draw the veil now exhale exhale try to find a word to say but it's all magic all the way make the last step worth the climb 'cause it's all magic all the time stop your sadness stop your madness automatically feral from the throne no don't let the spirit go let it grow with a burning glow stop your sadness stop your madness stop your sadness stop your madness automatically
+
+SYSTEM B:
+your body come on the night we will come on and we come down and come on the one up in the dark on me through your eyes in our way when i won't find the sky are we are you in the sun and let me to all your heart and come with the lights and come on the time oh yeah you on you let me down on the air and we have you
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+
+────────────────────────────────────────────────────────────
+Sample #4
+
+PROMPT:
+intro huh i dunno man this this this is my passion bro it's my passion haven't you found your
+
+SYSTEM A:
+passion you know that thing that thing that wakes you up that makes life make sense yeah yeah yeah exactly so yeah well this this is mine this music i mean i've been writing i've been into writing and making music since i was like seven bro and and at first i was like a regular person you know i didn't think this was even an in life you know i was all about getting that degree in medicine or in engineering you know i was like being a musician it's not possible that was my thinking you know but my dad he said to me he sat me down he said to me do what you love do what makes you happy and that hit home bro that hit home i mean you know he said a bunch of other important stuff but like lets focus on that he said do what you love and that is all i'm doing bridge passion i admit that rapping and acting are my passions ain't afraid to practice my talents cause they my passion can you imagine success happens cause you ain't lacking a passion can you imagine fans and just having a passion passion it's all about having a passion x4 verse 1 i'm entering a jungle and i know it trying not to fumble hope i dont blow it tempted by the mumble but i'm a poet challenged by the mumble watch the so many things that are tryina keep me down trying to get the positive curve outta my smile shackles on my mind as i try free my style animal instincts it's a jungle as a crowd verse 2 if you don't already know the name is sap i made this playlist for you understand that the man can rap and you should know that this is a little piece of the pie december 15 i release the ing moment in my career a body of work that will defeat my feelings of being knees deep in a sea of fear drowning in the thought of like my peers lord steer me away from failure take control of the wheel drive us through the jungle as i seek my next meal blind the people searching for my achilles heel i said blind the people searching for my achilles heal
+
+SYSTEM B:
+my niggas just like a nigga you i gotta have been here i got you want to know my mind like the bitch yeah that's me the bitch that you got me a nigga i'm got a minute like a lot of me back but i need to live you know i mean you i can think i'm all my feet but i got a nigga on my bitch the shit for the way you got a new new
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+
+────────────────────────────────────────────────────────────
+Sample #5
+
+PROMPT:
+swiping my card like man bag brown like a bag on the outfit casual boxers and socks
+
+SYSTEM A:
+on my neck got a hoe like a man i was a nigga a lot of the block like the money im just got me bitch i got a fuck me bitch a on his ass bitch i got me a you don't hit my bitch she was a girl i dont wanna get the he ain't got i was a damn nigga like a nigga i like a a nigga nigga
+
+SYSTEM B:
+are a using the traps like air ones white like ruby me kay hit a lick so we threw a monk down on the swiping my card like man bag brown like a bag on the outfit casual boxers and socks are a using the traps like air ones white like ruby me kay hit a lick threw a monk down on the road is where i get down man get bored up in the g town last bredda went and got his door kicked in all cause he tried duck man for the pound anybody getting chased down cant shout walk where i want to walk cause i got clout my blocks just like a double shot of vodka your blocks just like a dragon stout anywhere that i got beef i skrr man that dont really want beef dont stir 4 turn his whole life to a blur chicks show kitty i make that shit purr chat to my cats like im lonely my cats chat back like no oj ting but i want to test her and youll get left in leicester on the line from early not from the east nothing aint pearly im from the west where the sniff shirley and everybodys got a home gym and a nursery cause you dont like man please dont curse me call up to god wont let a man hurt me im on a wave with the drugs thats keys on the board im moving three whips deep two gats mans you aint in the trap house fam youre nerdy big up and dan theyre my people soon pay for a birdie cook with the fork and i chef with the soda got a big dog dont look for the owner i be the shooter and im the jakes dem want to book man like swiping my card like man bag brown like a bag on the outfit casual boxers and socks are a using the traps like air ones white like ruby me kay hit a lick so we threw a monk down on the swiping my card like man bag brown like a bag on the outfit casual boxers and socks are a using the traps like air ones white like ruby me kay hit a lick threw a monk down on the gassed on the riddim im hyper riding the riddim on point like sniper sharp bars that you cant dodge like viper get it cant dodge like viper im moving like dont bring your girl round me cah manna might like her i made 10k large from my man cant chat about trap from my all my ps go to my mum if you try and rob me youre trying to take from my mum are you dumb make man skip to the beat of the gun i dont want a z man want a whole man want to earn like pablo mash bread me and my are like a from a spanish town got stripes just like move food in im a new school put a grey in your house like roger post in your crib with the work like a jump straight over connects like tell that chick shes cute man holla my skeng will touch man like a sad story try beef man itll get mad gory last yout came round town try bore me dropped on his back got fried like im back in the kitchen boil and whipping whip and flexing straight phone calls for the work no texting if you want a t its normal mans stretching i aint never bust no shot to a stranger 120 on the im danger you never in a week in a yard no clean cups and no toilet paper swiping my card like man bag brown like a bag on the outfit casual boxers and socks are a using the traps like air ones white like ruby me kay hit a lick so we threw a monk down on the swiping my card like man bag brown like a bag on the outfit casual boxers and socks are a using the traps like air ones white like ruby me kay hit a lick threw a monk down on the swiping my card like man bag brown like a bag on the outfit casual boxers and socks are a using the traps like air ones white like ruby me kay hit a lick so we threw a monk down on the swiping my card like man bag brown like a bag on the outfit casual boxers and socks are a using the traps like air ones white like ruby me kay hit a lick threw a monk down on the
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+
+────────────────────────────────────────────────────────────
+Sample #6
+
+PROMPT:
+all that i'm seeing around me bright shining stars that abound me suddenly out of control rather it catches
+
+SYSTEM A:
+the night will find me and the by the same and then you're gonna have to the world is there is it to you and i have the of your love will we are you love is my voice of time to you the pain for your eyes the love is so we can have to see the past the only i need you are you will be the sun is your it is only i should
+
+SYSTEM B:
+my soul don't know what's up or down somehow i feel like the clown maybe someday i will wake up to find that it's all really made up going in orbit with you oh yeah that's all that i do going around to the light side going around to the dark side behind me a gray big nothing i think that we really had something i don't have to fear a black hole out here i'm sure of my role all that i am is weightless all that i see is timeless going in orbit with you oh yeah that's all that i do going around and around i'm going in orbit with you
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+
+────────────────────────────────────────────────────────────
+Sample #7
+
+PROMPT:
+your eyes have turned red once beautiful now ashamed the girl i once adored now different now gone bring
+
+SYSTEM A:
+back the heart i once thought so highly of bring back the one who wasn't so high and mighty i will not sit around and watch you bring your demise i cannot sit around and watch your bleeding eyes take back what you've said take back all you've done your heart will be alone you do not deserve me i don't want to let you be part of me you had your chances and now i am coming clean your ego has become larger than life have fun with your beauty it's all you'll ever know your eyes bring disgust your heart fading fast your soul once was gold now nothing brings it back color my insides black and reveal the pain my heart will beat again
+
+SYSTEM B:
+it back i can you you in your heart in the way i am i never go out of my face in my body when you in my chest your face and i know i was i know what i can feel a i might give me back in a girl you can see you out in the face in your heart to do you want to get this way to take your love you to my name
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+
+────────────────────────────────────────────────────────────
+Sample #8
+
+PROMPT:
+what's gucci boston bitch she bougie yeah yeah yeah you goofy told niggas you don't like me shoot
+
+SYSTEM A:
+me and if you don't wanna fight me sue me guaranteed niggas won't like the new me this feel like a spike lee movie room full of hoes and i might get choosy please excuse me all of my moves are carefully planned don't play with me i'm a family man i put your bitch on my family plan my mansion lookin' like fantasy land i bought a beach with some canada sand all of my moves are carefully planned i'm two steps ahead like scams word now hand m the benz you in the crib and i'm hre with the fans my bitch got titties like and she wanna fuck in a van i'm 'bout to turn to a psycho you 'bout to see my true colors like michael i'm 'bout to pick niggas up with a rifle i never lit niggas up but i might though i'm a cool nigga but i can get spiteful i'm fuck this shit up like a you do not know me no we ain't related and we ain't got mutual friends that i might know i don't wanna be acquainted regardless every bitch i ever been with told me i'm heartless i dont trust a single motherfucker i'm cautious i can never win they want me up in a coffin way before i started winnin' had a couple of losses had to make a livin' out my mother's apartment wasn't too much opportunity to come up in boston i was fucking exhausted i was done with the talkin' i was workin' odd jobs had me stuck in the office on god i was outside runnin' and walkin' nonstop on a dark block duckin' and dodgin' all cops 'til they all stop and all glocks 'til my heart stops workin' at ten breaths i any fuck nigga relentless i been dead i ain't put you niggas to bed yet the bed wet this a wet dream of wet sex wit' why am i not allowed to feel to feel free i learned from god whatever will just will be i bet you prolly wanna kill to kill me the cops who killed taylor still free and george prolly kill to still breathe how many black lives did they kill to kill me i protest but we still feel no real peace i hear no relief i still don't feel free and man i hate fucked up rules got a fucked up head with some fucked up screws bitch please don't put me in a fucked up mood got twin nines and we play duck duck goose better jump up move 'fore i niggas get up too i'm in a fucked up mood i don't even trust me why the fuck trust you three deep in your crib like a drug bust one plus two nigga i'm with the fam bitch you a pig i don't fuck with no ham all y'all been sleepin' i'm you in i built a label then upped the advance please don't compare me to none of these i'm buildin' my brand you stuck in the ground i took advantage and stuck to the plan fuck is you sayin' what's gucci boston bitch she bougie yeah yeah look you goofy told niggas you don't like me shoot me and if you don't wanna fight me sue me guaranteed niggas won't like the new me they won't this feel like a spike lee movie what's gucci
+
+SYSTEM B:
+me i got em you tryna go i was really got me im just want me i know a fuck you fucking wanna feel like my wrist i keep a boy in the bitch i got me a bitch i dont wanna be a couple she told me bitch i gotta play me fuck it on my way in my block to be got the shit that shit i said i got my nigga nigga ain't love me nigga
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+
+────────────────────────────────────────────────────────────
+Sample #9
+
+PROMPT:
+mixing me tell you somethin i'm 'bout to set it off society watch me while i do
+
+SYSTEM A:
+it all these niggas ain't got a nigga and my nigga get it off you got a couple new hoe you gon' love it bitch i don't think i got to my you got me niggas got a hoe fuck that nigga know the same bitch nigga i been no got the pussy got no nigga fuck it a bitch got no nigga on the nigga you tryna get a bitch you got the i got bitch
+
+SYSTEM B:
+it yo yo i buck shots lick shots take shots give shots know this year we switch spots check it i spit it for the righteous and the wretched first came the live show next came the records next with wax with rap with scratch with dance with worldwide travelers in your sector dj come down i raw here i explore here you like that where that comes from there's more there this is warfare and we score fair we don't stop 'til our flag swings in your air i rap to build or i rap to ruin your whole career yo watch what you doin mixing me tell you somethin i'm 'bout to set it off society watch me while i do it i'm 'bout 'bout 'bout to i'm 'bout to set it off society watch me while i do it i'm 'bout 'bout i'm 'bout to set it off society watch me while i do it watch me while i do it me while i do it me tell you somethin i'm 'bout to set it off society watch me while i do it yo yo i'm a poet with the warrior spirit inside chokin' rappers out like in pride we all share the same sun givin us light but remember sink or swim time a fight expansion team takes rows takes oceans takes flight then takes over the stage 'til the morning breaks night word of mouth crew make sure we pay right then hendrix takes over my body i blaze mics spray 3d outlines and highlights i know that are livin the high life at great heights i exercise my rights so much smoke when i'm this high i raps to build or raps to ruin your whole career yo watch what you're doin chorus i rock hills and valleys rap shows and record stores and schools live shit from cali take it to the people cut out the middle men like chuck said i don't rhyme for the sake of i rap to build or i rap to ruin your whole career yo watch what you're doin chorus talking pay attention uk y'all usa y'all japan y'all japan y'all france y'all france y'all
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+
+────────────────────────────────────────────────────────────
+Sample #10
+
+PROMPT:
+intact insane let your children in on all the pain your thirst for war any odd few will even
+
+SYSTEM A:
+the score led to belive that all is well and none shall deceive no guilt no shame clean those wounds in the sea of flames death is a virus and you'll welcome the disease straight out of the 13th lab your brand new god stab x3 not man nor child my running wild sharpen the blade i'm the product i am what you made kept in locked up i'm the killer you will never stop i'm christ i am heaven i am fucking hell
+
+SYSTEM B:
+be the other way to be the other time to find your own world is the reason the world to be more than a and the way i do you see the one for my eyes in the sun was you the same day of the end of the world to find you were the last time to the same day or one for us i love to the world is the same thing if you are one
+
+Ratings:
+  fluency_A                : ______
+  fluency_B                : ______
+  coherence_A              : ______
+  coherence_B              : ______
+  creativity_A             : ______
+  creativity_B             : ______
+  rhyme_A                  : ______
+  rhyme_B                  : ______
+  overall_preference       : ______
+Comments: _________________________________
+

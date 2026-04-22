@@ -1,0 +1,22 @@
+{
+  "model": "gpt2",
+  "perplexity": 280.5244731719112,
+  "bleu": {
+    "bleu-1": 0.0361989321508951,
+    "bleu-2": 0.012922612320745952,
+    "bleu-3": 0.0035677087675696486,
+    "bleu-4": 0.0010055881376378841,
+    "bleu-avg": 0.013423710344212145
+  },
+  "rhyme": {
+    "ref_rhyme_density_mean": 0.0,
+    "hyp_rhyme_density_mean": 0.0,
+    "rhyme_preservation_mean": 0.0
+  },
+  "theme": {
+    "theme_sim_mean": 0.049483279144355914,
+    "theme_sim_std": 0.06463858631535749,
+    "theme_sim_min": 0.0,
+    "theme_sim_max": 0.5107064930480968
+  }
+}
