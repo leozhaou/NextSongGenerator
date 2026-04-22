@@ -236,13 +236,11 @@ NextSongGenerator/
 
 ## Known Issues
 
-- `preprocess.py` contains debug print statement ("I am a big dummy") – should be removed
 - BERT is MLM-based (fill-mask), not autoregressive generation
 - Requires filtered English lyrics CSV
 
 ## Future Improvements
 
-- [ ] Add BERT-specific evaluation pipeline
 - [ ] Add rhythm-aware loss function
 - [ ] Support multi-language training
 - [ ] Implement attention visualization
