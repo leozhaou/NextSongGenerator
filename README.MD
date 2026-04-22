@@ -10,6 +10,7 @@ This project implements transformer and RNN-based language models to generate so
 
 - **LSTM** – Multi-layer LSTM with sliding-window training
 - **GPT-2** – Transformer-based autoregressive model (fine-tuned HuggingFace)
+- **BERT-base-uncased** – Masked language model fine-tuning for lyric fill-in
 
 ## Project Structure
 
@@ -17,7 +18,7 @@ This project implements transformer and RNN-based language models to generate so
 ├── models/
 │   ├── lstm.py          # LSTM architecture + custom tokenizer
 │   ├── gpt2.py          # GPT-2 transformer implementation
-│   ├── bert.py          # (stub)
+│   ├── bert.py          # BERT MLM training helpers
 │   └── __init__.py
 ├── scripts/
 │   ├── train.py         # Training pipeline (supports all models)
@@ -86,7 +87,22 @@ python scripts/train.py \
     --save_dir checkpoints/gpt2/
 ```
 
-### 4. Evaluate Model
+### 4. Train BERT (Masked LM)
+
+```bash
+python scripts/train.py \
+    --model bert \
+    --data data/song_lyrics.csv \
+    --save_dir checkpoints/bert \
+    --language en \
+    --min_words 50 \
+    --seq_len 128 \
+    --epochs 3 \
+    --batch_size 16 \
+    --lr 5e-5
+```
+
+### 5. Evaluate Model
 
 ```bash
 python scripts/evaluate.py \
@@ -221,12 +237,12 @@ NextSongGenerator/
 ## Known Issues
 
 - `preprocess.py` contains debug print statement ("I am a big dummy") – should be removed
-- BERT model stub not yet implemented
+- BERT is MLM-based (fill-mask), not autoregressive generation
 - Requires filtered English lyrics CSV
 
 ## Future Improvements
 
-- [ ] Implement BERT-based bidirectional model
+- [ ] Add BERT-specific evaluation pipeline
 - [ ] Add rhythm-aware loss function
 - [ ] Support multi-language training
 - [ ] Implement attention visualization
