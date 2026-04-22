@@ -86,6 +86,72 @@ def get_model(model_name: str, **kwargs) -> nn.Module:
         raise ValueError(f"Unknown model '{model_name}'. Add it to get_model().")
 
 
+def train_bert(args: argparse.Namespace, lyrics: list[str]) -> None:
+    from datasets import Dataset, DatasetDict
+    from transformers import Trainer, TrainingArguments
+    from models.bert import build_bert_artifacts
+
+    ds = Dataset.from_dict({"lyrics": lyrics})
+    split = ds.train_test_split(test_size=args.val_split, seed=args.seed)
+    dataset = DatasetDict({"train": split["train"], "validation": split["test"]})
+
+    artifacts = build_bert_artifacts(
+        model_name=args.bert_model_name,
+        mlm_probability=args.mlm_probability,
+    )
+
+    def tokenize_batch(batch):
+        return artifacts.tokenizer(
+            batch["lyrics"],
+            truncation=True,
+            padding="max_length",
+            max_length=args.seq_len,
+        )
+
+    tokenized = dataset.map(tokenize_batch, batched=True, remove_columns=["lyrics"])
+
+    training_args = TrainingArguments(
+        output_dir=args.save_dir,
+        eval_strategy="epoch",
+        save_strategy="epoch",
+        logging_steps=args.logging_steps,
+        learning_rate=args.lr,
+        weight_decay=args.weight_decay,
+        num_train_epochs=args.epochs,
+        per_device_train_batch_size=args.batch_size,
+        per_device_eval_batch_size=args.batch_size,
+        fp16=torch.cuda.is_available(),
+        load_best_model_at_end=True,
+        metric_for_best_model="eval_loss",
+        greater_is_better=False,
+        report_to="none",
+        seed=args.seed,
+    )
+
+    trainer = Trainer(
+        model=artifacts.model,
+        args=training_args,
+        train_dataset=tokenized["train"],
+        eval_dataset=tokenized["validation"],
+        data_collator=artifacts.data_collator,
+        tokenizer=artifacts.tokenizer,
+    )
+
+    trainer.train()
+    metrics = trainer.evaluate()
+    print(f"[eval] {metrics}")
+    if "eval_loss" in metrics:
+        print(f"[eval] perplexity={math.exp(metrics['eval_loss']):.4f}")
+
+    save_dir = Path(args.save_dir) / "best"
+    save_dir.mkdir(parents=True, exist_ok=True)
+    trainer.save_model(str(save_dir))
+    artifacts.tokenizer.save_pretrained(str(save_dir))
+    with open(Path(args.save_dir) / "history.json", "w") as f:
+        json.dump({"eval": metrics}, f, indent=2)
+    print(f"[done] Saved model/tokenizer to {save_dir}")
+
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
@@ -98,7 +164,7 @@ def set_seed(seed: int) -> None:
         torch.cuda.manual_seed_all(seed)
 
 
-def load_lyrics(csv_path: str, language: str | None = None) -> list[str]:
+def load_lyrics(csv_path: str, language: str | None = None, min_words: int = 20) -> list[str]:
     """
     Load and clean lyric strings from the CSV.
 
@@ -120,7 +186,7 @@ def load_lyrics(csv_path: str, language: str | None = None) -> list[str]:
     df = df.dropna(subset=["lyrics"])
     # Fast char-length proxy first (~5 chars/word * 20 words = 100 chars), then exact check
     df = df[df["lyrics"].str.len() >= 100]
-    df = df[df["lyrics"].str.split().str.len() >= 20]
+    df = df[df["lyrics"].str.split().str.len() >= min_words]
     lyrics = df["lyrics"].tolist()
     print(f"[data] {len(lyrics):,} usable lyrics after cleaning")
     return lyrics
@@ -209,7 +275,10 @@ def main(args: argparse.Namespace) -> None:
     print(f"[device] {device}")
 
     # ── data ──────────────────────────────────────────────────────────────
-    lyrics = load_lyrics(args.data, language=args.language)
+    lyrics = load_lyrics(args.data, language=args.language, min_words=args.min_words)
+    if args.model == "bert":
+        train_bert(args, lyrics)
+        return
 
     TokenizerClass, DatasetClass = get_tokenizer_and_dataset(args.model)
     tokenizer = TokenizerClass(max_vocab=args.vocab_size)
@@ -363,12 +432,14 @@ if __name__ == "__main__":
 
     # model
     parser.add_argument("--model",        default="lstm",
-                        help="Model to train: lstm | transformer | ...")
+                        help="Model to train: lstm | gpt2 | bert")
     parser.add_argument("--embed_dim",    type=int,   default=256)
     parser.add_argument("--hidden_dim",   type=int,   default=512)
     parser.add_argument("--num_layers",   type=int,   default=2)
     parser.add_argument("--dropout",      type=float, default=0.3)
     parser.add_argument("--tie_weights",  action="store_true")
+    parser.add_argument("--bert_model_name", default="bert-base-uncased")
+    parser.add_argument("--mlm_probability", type=float, default=0.15)
 
     # training
     parser.add_argument("--epochs",       type=int,   default=20)
@@ -379,6 +450,8 @@ if __name__ == "__main__":
     parser.add_argument("--max_steps_per_epoch", type=int, default=0,
                         help="Max training batches per epoch. 0 = full epoch.")
     parser.add_argument("--num_workers",  type=int,   default=4)
+    parser.add_argument("--logging_steps", type=int,  default=100)
+    parser.add_argument("--min_words",    type=int,   default=20)
     parser.add_argument("--seed",         type=int,   default=42)
 
     # checkpointing
@@ -388,6 +461,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if args.language == "":
         args.language = None
+    if args.model == "bert" and args.save_dir == "checkpoints/lstm/":
+        args.save_dir = "checkpoints/bert/"
     if args.stride == 0:
         args.stride = args.seq_len // 2
         print(f"[stride] auto → {args.stride}")
