@@ -1,6 +1,6 @@
 # NextSongGenerator
 
-A neural network-based song lyric generation system supporting multiple architectures (LSTM, GPT-2) for fine-tuned text generation.
+A neural network-based song lyric generation system supporting multiple architectures (LSTM, BERT, GPT-2) for fine-tuned text generation.
 
 ## Overview
 
